@@ -1,0 +1,7 @@
+.venv
+.idea
+.venv/Lib
+.venv/Scripts
+.coverage
+__pycache__/
+.env
