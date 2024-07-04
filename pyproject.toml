@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Ilya Novikov <illianovikovnitzana@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+prettytable = "^3.10.0"
+python-dotenv = "^1.0.1"
+psycopg2 = "^2.9.9"
+tqdm = "^4.66.4"
+
+
+[tool.poetry.scripts]
+search_employers = "src.cli.search_employers:run"
+init = "src.cli.init_db:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
