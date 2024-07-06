@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import psycopg2
 from src.config import settings
 from src.db.managers import PostgresDBManager
 
