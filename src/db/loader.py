@@ -46,7 +46,6 @@ def load_vacancies():
         with db_manager.connection.cursor() as cursor:
             for employer_id in tqdm(employer_ids, desc='Загрузка вакансий...'):
                 vacancies = api_client.get_employer_vacancies(employer_id)
-                vac = api_client.get_employer_vacancies(employer_id)
                 data = (
                     (vac.id, vac.name, vac.url, vac.type.name, vac.salary_from, vac.salary_to, employer_id)
                     for vac in vacancies
