@@ -89,7 +89,7 @@ def print_vacancies_with_keyword():
     finally:
         db_manager.disconnect()
     table = PrettyTable(field_names=['Название вакансии', 'Зарплата "от"', 'Зарплата "до"', 'Ссылка на вакансию'])
-    user_input = input("Введите ключевое слово для поиска вакансии:\n")
+    user_input = input("Введите ключевое слово для поиска вакансии:\n").title()
     for k in keyword:
         if user_input in k[0]:
             table.add_row([k[0], k[1], k[2], k[3]])
