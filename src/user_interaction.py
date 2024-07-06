@@ -3,6 +3,10 @@ from prettytable import PrettyTable
 
 
 def run_interaction():
+    """
+    Метод для запуска интерактива для пользователя.
+    Пользователь может выбрать действие, а программа возвращает запрошенные данные
+    """
     user_actions = {
         '1': print_employers,
         '2': print_all_vacancies,
@@ -33,6 +37,9 @@ def run_interaction():
 
 
 def print_employers():
+    """
+    Метод для печати работодателей
+    """
     db_manager = PostgresDBManager()
     try:
         res = db_manager.get_companies_and_vacancies_count()
@@ -46,6 +53,9 @@ def print_employers():
 
 
 def print_avg_salary():
+    """
+    Метод для печати средней зарплаты
+    """
     db_manager = PostgresDBManager()
     try:
         salary = db_manager.get_avg_salary()
@@ -55,6 +65,9 @@ def print_avg_salary():
 
 
 def print_vacancies_with_higher_salary():
+    """
+    Метод для печати вакансий с минимальной зарплатой выше средней
+    """
     db_manager = PostgresDBManager()
     try:
         higher_salary = db_manager.get_vacancies_with_higher_salary()
@@ -67,6 +80,9 @@ def print_vacancies_with_higher_salary():
 
 
 def print_vacancies_with_keyword():
+    """
+    Метод для печати вакансий по ключевому слову
+    """
     db_manager = PostgresDBManager()
     try:
         keyword = db_manager.get_vacancies_with_keyword()
@@ -82,6 +98,9 @@ def print_vacancies_with_keyword():
 
 
 def print_all_vacancies():
+    """
+    Метод для печати всех вакансий
+    """
     db_manager = PostgresDBManager()
     try:
         all_vacancies = db_manager.get_all_vacancies()
