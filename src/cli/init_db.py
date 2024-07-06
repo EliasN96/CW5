@@ -3,6 +3,9 @@ from src.db.migrations import create_database, apply_migrations
 
 
 def run():
+    """
+    Метод создающий БД, запускающий инициализацию загрузки работодателей и вакансий
+    """
     print('Создание схем...')
     create_database()
     apply_migrations()
