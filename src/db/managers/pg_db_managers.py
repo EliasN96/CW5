@@ -1,4 +1,4 @@
-from .base import DBManager
+from src.db.managers.base import DBManager
 import psycopg2
 
 
