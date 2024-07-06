@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from src.config import settings
-from src.db.managers import PostgresDBManager
+from src.db.managers.pg_db_managers import PostgresDBManager
 
 
 def create_database():
