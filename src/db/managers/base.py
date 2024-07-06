@@ -6,7 +6,7 @@ from src.config import settings
 
 class DBManager(ABC):
     """
-    Класс менеджер для работы с БД
+    Класс менеджер для работы с БД наследующийся от абстрактного класса
     """
     def __init__(self, db_name: str = settings.DB_NAME):
         """
