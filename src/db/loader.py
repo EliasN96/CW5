@@ -1,6 +1,6 @@
 from src.api_clients import HeadHunterAPIClient
 from src.config import settings
-from src.db.managers import PostgresDBManager
+from src.db.managers.pg_db_managers import PostgresDBManager
 from tqdm import tqdm
 api_client = HeadHunterAPIClient()
 
