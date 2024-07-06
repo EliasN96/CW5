@@ -1,4 +1,4 @@
-from src.db.managers import PostgresDBManager
+from src.db.managers.pg_db_managers import PostgresDBManager
 from prettytable import PrettyTable
 
 
