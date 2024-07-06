@@ -6,6 +6,9 @@ api_client = HeadHunterAPIClient()
 
 
 def load_employers():
+    """
+    Метод для загрузки работодателей через БД
+    """
     employer_ids = settings.get_employer_ids()
     sql = """
         INSERT INTO employers (id, name, url, site_url, region)
@@ -27,6 +30,9 @@ def load_employers():
 
 
 def load_vacancies():
+    """
+    Метод для загрузки вакансий через БД
+    """
     employer_ids = settings.get_employer_ids()
     sql = """
             INSERT INTO vacancies (id, name, url, type, salary_from, salary_to, employer_id)
