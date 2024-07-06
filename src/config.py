@@ -8,6 +8,9 @@ load_dotenv()
 
 
 class Settings:
+    """
+    Класс для настройки БД
+    """
     DB_NAME = 'cw5'
     DB_USER = os.environ['DB_NAME']
     DB_PASSWORD = os.environ['DB_PASSWORD']
@@ -17,6 +20,9 @@ class Settings:
     MIGRATIONS_DIR = BASE_DIR.joinpath('src', 'migrations')
 
     def get_employer_ids(self) -> list[int]:
+        """
+        Метод для получения идентификаторов работодателей
+        """
         with self.EMPLOYEE_IDS_CONFIG.open() as f:
             data = json.load(f)
 
