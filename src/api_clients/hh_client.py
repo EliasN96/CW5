@@ -9,7 +9,7 @@ class HeadHunterAPIClient(APIClient):
 
     def __init__(self):
         """
-        Метод инициалищирующий базовую ссылку hh.ru 
+        Метод инициализирующий базовую ссылку hh.ru
         """
         self.__base_url = 'https://api.hh.ru'
 
