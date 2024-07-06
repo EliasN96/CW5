@@ -4,6 +4,9 @@ from enum import Enum
 
 @dataclass
 class ShortEmployerInfo:
+    """
+    Дата класс с обозначением параметров для краткой информации о работодателе
+    """
     id: int
     name: str
     url: str
@@ -12,6 +15,9 @@ class ShortEmployerInfo:
 
 @dataclass
 class FullEmployerInfo:
+    """
+    Дата класс с обозначением параметров для полной информации о работодателе
+    """
     id: int
     name: str
     url: str
@@ -21,6 +27,9 @@ class FullEmployerInfo:
 
 
 class VacancyType(Enum):
+    """
+    Класс определяющий типы вакансий
+    """
     open = "Открытая"
     closed = "Закрытая"
     anonymous = "Анонимная"
@@ -29,6 +38,9 @@ class VacancyType(Enum):
 
 @dataclass
 class VacancyInfo:
+    """
+    Дата класс с обозначением параметров для информации о вакансии
+    """
     id: int
     name: str
     url: str
