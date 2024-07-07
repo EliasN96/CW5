@@ -12,7 +12,8 @@ def run_interaction():
         '2': print_all_vacancies,
         '3': print_avg_salary,
         '4': print_vacancies_with_higher_salary,
-        '5': print_vacancies_with_keyword
+        '5': print_vacancies_with_keyword,
+        '6': print_keyword
     }
     while True:
         print(
@@ -22,6 +23,7 @@ def run_interaction():
             '3 - получить среднюю зарплату по вакансиям;',
             '4 - получить список всех вакансий, у которых зарплата выше средней по всем вакансиям;',
             '5 - получить список всех вакансий по ключевому слову',
+            '6 - получить список всех вакансий по ключевому слову (через оператор LIKE)'
             '0 - выйти',
             sep='\n'
         )
@@ -111,4 +113,21 @@ def print_all_vacancies():
     for v in all_vacancies:
         table.add_row([v[0], v[1], v[2], v[3], v[4]])
 
+    print(table)
+
+
+def print_keyword():
+    """
+    Метод для печати вакансий по ключевому слову через оператор LIKE
+    """
+    db_manager = PostgresDBManager()
+    try:
+        keyword = db_manager.get_vacancies_w_keyword()
+    finally:
+        db_manager.disconnect()
+    table = PrettyTable(field_names=['vacancies'])
+    user_input = input("Введите ключевое слово для поиска вакансии:\n").title()
+    for v in keyword:
+        if user_input in v[0]:
+            table.add_row([v[0]])
     print(table)
