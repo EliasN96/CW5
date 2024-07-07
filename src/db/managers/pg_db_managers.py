@@ -89,6 +89,20 @@ class PostgresDBManager(DBManager):
             cursor.execute(sql)
             return cursor.fetchall()
 
+    def get_vacancies_w_keyword(self):
+        """
+        Метод для получения вакансий по ключевому слову через метод LIKE
+        """
+        sql = """
+            SELECT v.name FROM vacancies AS v
+            WHERE v.name LIKE '%'
+        """
+        self.connect()
+        with self.connection.cursor() as cursor:
+            cursor.execute(sql)
+            name = cursor.fetchall()
+            return name
+
     def get_all_vacancies(self):
         """
         Метод для получения всех вакансий
